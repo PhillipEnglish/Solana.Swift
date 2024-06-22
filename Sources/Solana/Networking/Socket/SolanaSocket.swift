@@ -145,6 +145,8 @@ extension SolanaSocket: WebSocketDelegate {
         case .error(let error): break
             self.delegate?.error(error: error)
         }
+    default:
+        break 
     }
 
     private func log(event: WebSocketEvent) {
@@ -170,6 +172,8 @@ extension SolanaSocket: WebSocketDelegate {
         case .error(let error):
             if enableDebugLogs { debugPrint("error \(error?.localizedDescription ?? "")") }
         }
+    default:
+        break
     }
 
     private func onText(string: String) {
